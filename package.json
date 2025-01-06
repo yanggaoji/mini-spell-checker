@@ -1,0 +1,60 @@
+{
+  "name": "mini-spell-checker",
+  "displayName": "Mini Spell Checker",
+  "description": "A lightweight spell checker extension",
+  "version": "1.0.0",
+  "publisher": "MagicalCarl",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "categories": [
+    "Linters"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "spellChecker.reloadDictionary",
+        "title": "Spell Checker: Reload Dictionary"
+      },
+      {
+        "command": "spellChecker.addToUserDictionary",
+        "title": "Spell Checker: Add Word to User Dictionary"
+      },
+      {
+        "command": "spellChecker.exportUserDictionary",
+        "title": "Spell Checker: Export User Dictionary"
+      }
+    ],
+    "configuration": {
+      "title": "Mini Spell Checker",
+      "properties": {
+        "miniSpellChecker.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the spell checker."
+        },
+        "miniSpellChecker.enabledLanguages": {
+          "type": "array",
+          "default": [
+            "plaintext",
+            "markdown",
+            "javascript",
+            "typescript"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "List of languages in which the spell checker should be enabled."
+        }
+      }
+    },
+    "capabilities": {
+      "hoverProvider": true
+    }
+  }
+}
