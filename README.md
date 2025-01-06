@@ -21,8 +21,8 @@ A lightweight spell checker extension designed for legacy Visual Studio Code and
 
 ## Installation
 
-1. Download the .vsix file from the releases page
-2. Install via: `code --install-extension mini-spell-checker-1.0.0.vsix`
+1. Go to the [releases page](https://marketplace.visualstudio.com/items?itemName=MagicalCarl.mini-spell-checker)
+2. Click the "Install" button on the page
 3. Reload VS Code
 
 ## Usage

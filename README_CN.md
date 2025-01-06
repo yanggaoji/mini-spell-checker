@@ -21,8 +21,8 @@
 
 ## 安装方法
 
-1. 从发布页面下载 .vsix 文件
-2. 通过命令安装：`code --install-extension mini-spell-checker-1.0.0.vsix`
+1. 前往[发布页面](https://marketplace.visualstudio.com/items?itemName=MagicalCarl.mini-spell-checker)
+2. 点击页面上的“Install”按钮
 3. 重新加载 VS Code
 
 ## 使用说明
