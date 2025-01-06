@@ -2,7 +2,10 @@
   "name": "mini-spell-checker",
   "displayName": "Mini Spell Checker",
   "description": "A lightweight spell checker extension",
-  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/yanggaoji/mini-spell-checker.git"
+  },
+  "version": "1.0.1",
   "publisher": "MagicalCarl",
   "license": "MIT",
   "engines": {

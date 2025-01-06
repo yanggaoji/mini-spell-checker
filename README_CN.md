@@ -1,3 +1,5 @@
+[English Version](./README.md)
+
 # 迷你拼写检查器
 
 一个专为旧版 Visual Studio Code 和类 VSCode 编辑器设计的轻量级拼写检查扩展。

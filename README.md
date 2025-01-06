@@ -1,3 +1,5 @@
+[中文版](./README_CN.md)
+
 # Mini Spell Checker
 
 A lightweight spell checker extension designed for legacy Visual Studio Code and VSCode-like editors.
