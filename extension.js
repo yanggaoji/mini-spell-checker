@@ -157,10 +157,20 @@ class SpellChecker {
               '", "'
             )}" in "${compound}"`;
 
+      const config = vscode.workspace.getConfiguration("miniSpellChecker");
+      const severityLevel = config.get("severityLevel", "information");
+
+      const severityMap = {
+        error: vscode.DiagnosticSeverity.Error,
+        warning: vscode.DiagnosticSeverity.Warning,
+        information: vscode.DiagnosticSeverity.Information,
+        hint: vscode.DiagnosticSeverity.Hint,
+      };
+
       const diagnostic = new vscode.Diagnostic(
         range,
         message,
-        vscode.DiagnosticSeverity.Warning
+        severityMap[severityLevel] || vscode.DiagnosticSeverity.Information
       );
 
       diagnostic.data = {
