@@ -1,0 +1,39 @@
+name: Publish Extension
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Package extension
+        run: vsce package
+
+      - name: Publish to Visual Studio Marketplace
+        uses: microsoft/vsce-publish@v1
+        with:
+          vsceVersion: "latest"
+          pat: ${{ secrets.VSCE_PAT }}
+          extensionFile: "*.vsix"
+
+      - name: Upload artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: "*.vsix"
+          asset_name: "*.vsix"
+          asset_content_type: application/octet-stream
